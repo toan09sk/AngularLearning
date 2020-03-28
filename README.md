@@ -38,3 +38,10 @@ step 5: git remote add orgin https://github.com/toan09sk/AngularLearning.git
 ## Setup project
 ng new AngularCrud --skip-tests true
 npm i bootstrap@3 --save
+
+## Reading data in angular
+Create:
+    models  --folder
+    employee.model.ts
+
+ng g c listEmployees --spec false --flat true
