@@ -34,3 +34,7 @@ step 2: git init
 step 3: git add -A
 step 4: git commit -m "first commit in Angular"
 step 5: git remote add orgin https://github.com/toan09sk/AngularLearning.git
+
+## Setup project
+ng new AngularCrud --skip-tests true
+npm i bootstrap@3 --save
