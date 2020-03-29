@@ -45,3 +45,6 @@ Create:
     employee.model.ts
 
 ng g c listEmployees --spec false --flat true
+
+## Angular routing and navigation
+ng g c createEmployee --spec false --flat true
