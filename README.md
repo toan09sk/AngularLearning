@@ -82,3 +82,11 @@ There are 2 ways to create forms in Angular
 option
     bsDatepicker
     bsDaterangepicker
+
+## Customise ngx bootstrap datepicker
+theme-default
+theme-green
+theme-blue
+theme-dark-blue
+theme-red
+theme-orange
