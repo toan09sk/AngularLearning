@@ -38,6 +38,7 @@ step 5: git remote add orgin https://github.com/toan09sk/AngularLearning.git
 ## Setup project
 ng new AngularCrud --skip-tests true
 npm i bootstrap@3 --save
+"./node_modules/bootstrap/dist/css/bootstrap.min.css",
 
 ## Reading data in angular
 Create:
@@ -70,4 +71,14 @@ There are 2 ways to create forms in Angular
 ## Angular select options from array
  create department.model.ts in models folder
 
+## Angular datepicker tutorial
+1. Why is not a good practice to use the browser built-in DatePicker control
+2. Installing ngx-bootstrap 
+3. Using ngx-bootstrap datepicker in Angular
 
+    npm i ngx-bootstrap --save
+     "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
+
+option
+    bsDatepicker
+    bsDaterangepicker
