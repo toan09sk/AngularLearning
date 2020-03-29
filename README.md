@@ -48,3 +48,16 @@ ng g c listEmployees --spec false --flat true
 
 ## Angular routing and navigation
 ng g c createEmployee --spec false --flat true
+
+## Angular base href
+Local Developer Machine 
+<base href="/">  -->  http://localhost:4200/list
+                 -->  http://localhost:4200/create
+
+Prodution Server
+<base href="/emp/"> --> http://serverName/emp/list
+                    --> http://serverName/emp/create
+
+ng serve -o --base-href
+ng build -prod --base-href
+
