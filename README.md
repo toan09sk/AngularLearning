@@ -61,3 +61,9 @@ Prodution Server
 ng serve -o --base-href
 ng build -prod --base-href
 
+## Angular forms tutorial
+
+There are 2 ways to create forms in Angular
+1. Template Driven Forms 
+2. Model Driven Forms (Commonly called Reactive Forms)
+

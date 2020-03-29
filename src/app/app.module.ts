@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListEmployeesComponent } from './list-employees.component';
 import { CreateEmployeeComponent } from './create-employee.component';
-import { RouterModule, Routes } from '@angular/router';
 
-const appRoutes:Routes=[
+const appRoutes: Routes = [
   { path: 'list', component: ListEmployeesComponent },
   { path: 'create', component: CreateEmployeeComponent },
   { path: '', redirectTo: '/list', pathMatch: 'full' }
@@ -22,6 +23,7 @@ const appRoutes:Routes=[
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
