@@ -90,3 +90,6 @@ theme-blue
 theme-dark-blue
 theme-red
 theme-orange
+
+## Angular ngif directive
+assets/images/mark.png
