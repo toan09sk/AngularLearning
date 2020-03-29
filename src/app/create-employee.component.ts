@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./create-employee.component.scss']
 })
 export class CreateEmployeeComponent implements OnInit {
-
+  gender = 'male';
   constructor() { }
 
   ngOnInit() {
