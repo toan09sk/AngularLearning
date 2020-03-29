@@ -9,7 +9,8 @@ import { NgForm } from '@angular/forms';
 export class CreateEmployeeComponent implements OnInit {
   gender = 'male';
   isActive = true;
-  
+  department = '3';
+
   constructor() { }
 
   ngOnInit() {
