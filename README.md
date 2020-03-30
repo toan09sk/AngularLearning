@@ -93,3 +93,8 @@ theme-orange
 
 ## Angular ngif directive
 assets/images/mark.png
+
+## Angular custom validator example template driven forms
+Create folder shared
+Create a custom Directive 
+ng g d shared/select-required-validator --spec false --flat true
