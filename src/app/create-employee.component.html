@@ -14,11 +14,12 @@
                 </span>
             </div>
 
-            <div class="form-group" [class.has-error]="email.invalid && email.touched">
+            <div class="form-group" [class.has-error]="email.invalid">
                 <label for="email" class="control-label">Email</label>
-                <input id="email" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" type="text"
-                    class="form-control" name="email" [(ngModel)]="employee.email" #email="ngModel">
-                <span class="help-block" *ngIf="email.errors?.required && email.touched">
+                <input id="email" [required]="contactPreference.value=='email'"
+                    pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" type="text" class="form-control"
+                    name="email" [(ngModel)]="employee.email" #email="ngModel">
+                <span class="help-block" *ngIf="email.errors?.required">
                     Email is required
                 </span>
                 <span class="help-block" *ngIf="email.errors?.pattern && email.touched">
@@ -26,10 +27,13 @@
                 </span>
             </div>
 
-            <div class="form-group">
-                <label for="phoneNumber">Phone Number</label>
-                <input id="phoneNumber" type="text" class="form-control" name="phoneNumber"
-                    [(ngModel)]="employee.phoneNumber">
+            <div class="form-group" [class.has-error]="phoneNumber.invalid">
+                <label for="phoneNumber" class="control-label">Phone Number</label>
+                <input id="phoneNumber" [required]="contactPreference.value=='phone'" #phoneNumber="ngModel" type="text"
+                    class="form-control" name="phoneNumber" [(ngModel)]="employee.phoneNumber">
+                <span class="help-block" *ngIf="phoneNumber.errors?.required">
+                    Phone Number is required
+                </span>
             </div>
 
             <div class="form-group" [class.has-error]="contactPreference.invalid">
@@ -46,7 +50,7 @@
                         Phone
                     </label>
                 </div>
-                <span class="help-block" *ngIf="contactPreference.invalid">
+                <span class="help-block" *ngIf="contactPreference.errors?.required">
                     ContactPreference is required
                 </span>
             </div>
