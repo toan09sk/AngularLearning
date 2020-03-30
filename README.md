@@ -98,3 +98,6 @@ assets/images/mark.png
 Create folder shared
 Create a custom Directive 
 ng g d shared/select-required-validator --spec false --flat true
+
+## Angular password and confirm password validation
+ng g d shared/confirm-equal-validator --spec false --flat true
