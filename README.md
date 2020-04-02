@@ -118,3 +118,6 @@ CanLoad             Guard navigation to a feature module loaded asynchronously
 Resolve             Perform route data retrieval before route activation
 
 ng g s employees/create-employee-can-deactivate-guard
+
+## Angular route params
+ng g c employees/employee-details --flat --no-spec
