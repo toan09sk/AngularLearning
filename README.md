@@ -105,3 +105,6 @@ ng g d shared/confirm-equal-validator --spec false --flat true
 ## Angular 5 services tutorial
 Create Employees Folder
 ng g s employees/employee
+
+## Pass data from parent to child component in angular
+ng g c employees/DisplayEmployee --flat --no-spec
