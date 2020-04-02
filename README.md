@@ -108,3 +108,13 @@ ng g s employees/employee
 
 ## Pass data from parent to child component in angular
 ng g c employees/DisplayEmployee --flat --no-spec
+
+## Angular route guards
+
+CanDeactivate       Guard navigation away from the current route
+CanActivate         Guard navigation to a route
+CanActivateChild    Guard navigation to a child route
+CanLoad             Guard navigation to a feature module loaded asynchronously
+Resolve             Perform route data retrieval before route activation
+
+ng g s employees/create-employee-can-deactivate-guard
