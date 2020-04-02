@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Department } from './models/department.model';
+import { Department } from '../models/department.model';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker/public_api';
-import { Employee } from './models/employee.model';
+import { Employee } from '../models/employee.model';
 
 @Component({
   templateUrl: './create-employee.component.html',
