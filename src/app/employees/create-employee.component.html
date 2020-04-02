@@ -1,4 +1,4 @@
-<form #employeeForm="ngForm" ngNativeValidate (ngSubmit)="saveEmployee(employee)">
+<form #employeeForm="ngForm" ngNativeValidate (ngSubmit)="saveEmployee()">
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">Create Employee</h3>
@@ -115,39 +115,13 @@
             </div>
 
             <div class="form-group">
-                <img [src]="photoPath" height="200" width="200" *ngIf="previewPhoto" />
+                <img [src]="employee.photoPath" height="200" width="200" *ngIf="previewPhoto" />
             </div>
 
             <div class="form-group">
-                <button (click)="togglePhotoPreview()" class="btn btn-primary">
+                <button (click)="togglePhotoPreview()" type="button" class="btn btn-primary">
                     {{previewPhoto ? "Hide " : "Show " }} Preview
                 </button>
-            </div>
-
-            <div ngModelGroup="passwordGroup" #passwordGroup="ngModelGroup" appConfirmEqualValidator [class.has-error]="passwordGroup.errors?.notEqual
-            && !confirmPassword.errors?.required">
-                <div class="form-group" [class.has-error]="password.touched && password.invalid">
-                    <label for="password" class="control-label">Password</label>
-                    <input id="password" required type="text" class="form-control" name="password"
-                        (change)="confirmPassword.control.updateValueAndValidity()" [(ngModel)]="employee.password"
-                        #password="ngModel">
-                    <span class="help-block" *ngIf="password.touched && password.errors?.required">
-                        Password is required
-                    </span>
-                </div>
-
-                <div class="form-group" [class.has-error]="confirmPassword.touched && confirmPassword.invalid">
-                    <label for="confirmPassword" class="control-label">Confirm Password</label>
-                    <input name="confirmPassword" required id="confirmPassword" type="text" class="form-control"
-                        [(ngModel)]="employee.confirmPassword" #confirmPassword="ngModel">
-                    <span class="help-block" *ngIf="confirmPassword.touched && confirmPassword.errors?.required">
-                        Confirm Password is required
-                    </span>
-                    <span class="help-block" *ngIf="confirmPassword.touched && confirmPassword.errors?.notEqual &&
-              !confirmPassword.errors?.required">
-                        Password and Confirm Password does not match
-                    </span>
-                </div>
             </div>
         </div>
 
