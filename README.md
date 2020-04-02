@@ -101,3 +101,7 @@ ng g d shared/select-required-validator --spec false --flat true
 
 ## Angular password and confirm password validation
 ng g d shared/confirm-equal-validator --spec false --flat true
+
+## Angular 5 services tutorial
+Create Employees Folder
+ng g s employees/employee
