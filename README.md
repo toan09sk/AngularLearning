@@ -124,3 +124,6 @@ ng g c employees/employee-details --flat --no-spec
 
 ## Angular optional route parameters
 http://localhost:4200/list;id=2
+
+## Filter pipe in angular
+ng g p employees/EmployeeFilter
