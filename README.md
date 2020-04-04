@@ -127,3 +127,8 @@ http://localhost:4200/list;id=2
 
 ## Filter pipe in angular
 ng g p employees/EmployeeFilter
+
+## Angular impure pipe
+Default is pure
+pure pipes are fast, but filtering and sorting may not work as expected if the source data is updated
+without a change to the object reference
