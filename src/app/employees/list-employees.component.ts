@@ -10,7 +10,15 @@ import { Router } from '@angular/router';
 export class ListEmployeesComponent implements OnInit {
 
   employees: Employee[];
-
+  filteredEmployees: Employee[];
+  private _searchTerm: string;
+  get searchTerm(): string {
+    return this._searchTerm;
+  }
+  set searchTerm(value: string) {
+    this._searchTerm = value;
+    this.filteredEmployees = this.filterEmployees(value);
+  }
   constructor(
     private _employeeService: EmployeeService,
     private _router: Router) { }
@@ -23,11 +31,21 @@ export class ListEmployeesComponent implements OnInit {
     this._router.navigate(['/employees', employeeId]);
   }
 
-  changeEmployeeName(){
+  changeEmployeeName() {
     this.employees[0].name = 'Jordan';
+    this.filteredEmployees = this.filterEmployees(this.searchTerm);
     // const newEmployeeArray:Employee[] = Object.assign([],this.employees);
     // newEmployeeArray[0].name = 'Jordan';
     // this.employees = newEmployeeArray;
+  }
+
+  filterEmployees(searchString: string) {
+    return this.employees.filter(employee =>
+      employee.name.toLowerCase().indexOf(searchString.toLowerCase()) !== -1);
+  }
+
+  onMouseMove() {
+
   }
 
 }
