@@ -121,3 +121,6 @@ ng g s employees/create-employee-can-deactivate-guard
 
 ## Angular route params
 ng g c employees/employee-details --flat --no-spec
+
+## Angular optional route parameters
+http://localhost:4200/list;id=2
