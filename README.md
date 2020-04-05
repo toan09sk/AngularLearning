@@ -125,6 +125,15 @@ ng g c employees/employee-details --flat --no-spec
 ## Angular optional route parameters
 http://localhost:4200/list;id=2
 
+##  Angular route params
+private _router: Router
+this._router.navigate(['/employees', employeeId]);
+
+## Angular read route parameters
+private _route: ActivatedRoute;
+const id = +this._route.snapshot.paramMap.get('id');
+this._route.params.subscribe()
+
 ## Filter pipe in angular
 ng g p employees/EmployeeFilter
 
