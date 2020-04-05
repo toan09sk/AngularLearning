@@ -141,3 +141,41 @@ ng g p employees/EmployeeFilter
 Default is pure
 pure pipes are fast, but filtering and sorting may not work as expected if the source data is updated
 without a change to the object reference
+
+## Angular query params
+http://localhost:4200/employees/3?searchTerm=John&testParam=testValue
+
+--Passing query string parameters--
+
+this._router.navigate(['/employees', employeeId], {
+    queryParams: { 'searchTerm': this.searchTerm, 'testParam': 'testValue' }
+});
+
+  <!-- <a [routerLink]="['/employees']"
+   [queryParams]="{ 'searchTerm': 'john', 'testParam': 'testValue'}">
+    List
+</a> -->
+
+--Preserve query string parameters--
+
+this._router.navigate(['/employees', this._id], {
+  queryParamsHandling: 'preserve'
+});
+
+<!-- <a [routerLink]="['/list']"
+   queryParamsHandling="preserve">
+    Back to List
+</a> -->
+
+--Merge query string parameters--
+http://localhost:4200/list;id=2?searchTerm=mary&testParam=testValue&newParam=newValue
+
+this._router.navigate(['/employees', this._id], {
+  queryParams: { 'newParam': 'newValue' },
+  queryParamsHandling: 'merge'
+});
+
+<!-- <a [routerLink]="['/list']"
+   [queryParams]="{'newParam': 'newValue'}" queryParamsHandling="merge" [queryParams]="{ 'newParam': 'newValue'}">
+    Back to List
+</a> -->
