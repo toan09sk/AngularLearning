@@ -179,3 +179,34 @@ this._router.navigate(['/employees', this._id], {
    [queryParams]="{'newParam': 'newValue'}" queryParamsHandling="merge" [queryParams]="{ 'newParam': 'newValue'}">
     Back to List
 </a> -->
+
+## Angular read query string parameters
+
+has(name)          Returns true if the parameter is present and false if not. Very useful to check for the existence 
+                   of optional route and query parameters
+
+get(name)          Returns the parameter value as a string if present, or null if not present in the map. Returns the 
+                   first element if the parameter value is an array of values
+
+getAll(name)       Returns a string array of the parameter value if found, or an empty array if the parameter is not present 
+                   in the map. Use getAll when a single parameter could have multiple values
+
+keys               Returns a string array of all the parameters in the map
+
+if (this._route.snapshot.queryParamMap.has('searchTerm')) {
+  this.searchTerm = this._route.snapshot.queryParamMap.get('searchTerm');
+} else {
+  this.filteredEmployees = this.employees;
+}
+
+OR
+
+this._route.queryParamMap.subscribe((queryParams) => {
+  if (queryParams.has('searchTerm')) {
+    this.searchTerm = queryParams.get('searchTerm');
+  } else {
+    this.filteredEmployees = this.employees;
+  }
+});
+
+http://localhost:4200/list;id=2?searchTerm=mark&testParam=testValue&newParam=newValue --> back to list
