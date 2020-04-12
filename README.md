@@ -210,3 +210,6 @@ this._route.queryParamMap.subscribe((queryParams) => {
 });
 
 http://localhost:4200/list;id=2?searchTerm=mark&testParam=testValue&newParam=newValue --> back to list
+
+## Angular resolve guard
+ng g s employees/employeeListResolver
