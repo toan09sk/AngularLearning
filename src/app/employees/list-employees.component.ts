@@ -25,26 +25,31 @@ export class ListEmployeesComponent implements OnInit {
     private _route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.employees = this._employeeService.getEmployees();
-    if (this._route.snapshot.queryParamMap.has('searchTerm')) {
-      this.searchTerm = this._route.snapshot.queryParamMap.get('searchTerm');
-    } else {
-      this.filteredEmployees = this.employees;
-    }
+    this._employeeService.getEmployees().subscribe((empList) => {
+      this.employees = empList;
+      this._route.queryParamMap.subscribe(params => {
+        if (params.has('searchTerm')) {
+          this.searchTerm = params.get('searchTerm');
+        } else {
+          this.filteredEmployees = this.employees;
+          console.log(this.employees.length);
+        }
+      });
+    });
   }
 
-  changeEmployeeName() {	
-    this.employees[0].name = 'Jordan';	
-    this.filteredEmployees = this.filterEmployees(this.searchTerm);	
+  changeEmployeeName() {
+    this.employees[0].name = 'Jordan';
+    this.filteredEmployees = this.filterEmployees(this.searchTerm);
     // const newEmployeeArray:Employee[] = Object.assign([],this.employees);	
     // newEmployeeArray[0].name = 'Jordan';	
     // this.employees = newEmployeeArray;	
-  }	
+  }
 
-  filterEmployees(searchString: string) {	
-    return this.employees.filter(employee =>	
-      employee.name.toLowerCase().indexOf(searchString.toLowerCase()) !== -1);	
-  }	
+  filterEmployees(searchString: string) {
+    return this.employees.filter(employee =>
+      employee.name.toLowerCase().indexOf(searchString.toLowerCase()) !== -1);
+  }
 
 
   onClick(employeeId: number) {
