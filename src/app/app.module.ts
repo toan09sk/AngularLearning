@@ -49,7 +49,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     FormsModule,
     BsDatepickerModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, { enableTracing: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
