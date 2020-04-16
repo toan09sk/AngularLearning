@@ -217,3 +217,7 @@ ng g s employees/employeeListResolver
 ## Angular route loading indicator
 The following website has different loading spinners.
 https://loading.io/css/
+
+## Angular canactivate guard example
+ng g c pageNotFound --flat
+ng g s employees/employee-details-guard
