@@ -213,3 +213,7 @@ http://localhost:4200/list;id=2?searchTerm=mark&testParam=testValue&newParam=new
 
 ## Angular resolve guard
 ng g s employees/employeeListResolver
+
+## Angular route loading indicator
+The following website has different loading spinners.
+https://loading.io/css/
