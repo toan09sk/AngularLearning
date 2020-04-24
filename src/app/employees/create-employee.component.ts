@@ -3,7 +3,7 @@ import { Department } from '../models/department.model';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker/public_api';
 import { Employee } from '../models/employee.model';
 import { EmployeeService } from './employee.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -34,9 +34,12 @@ export class CreateEmployeeComponent implements OnInit {
     { id: 4, name: 'Payroll' }
   ];
 
+  panelTitle: string;
+
   constructor(
     private _employeeService: EmployeeService,
-    private _router: Router
+    private _router: Router,
+    private _route:ActivatedRoute
   ) {
     this.datePickerConfig = Object.assign({},
       {
@@ -46,6 +49,10 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._route.paramMap.subscribe(parameterMap => {
+      const id = +parameterMap.get('id');
+      this.getEmployee(id);
+    });
   }
 
   togglePhotoPreview() {
@@ -57,6 +64,28 @@ export class CreateEmployeeComponent implements OnInit {
     this._employeeService.save(newEmployee);
     this.createEmployeeForm.reset();
     this._router.navigate(['list']);
+  }
+
+  private getEmployee(id: number) {
+    if (id === 0) {
+      this.employee = {
+        id: null,
+        name: null,
+        gender: null,
+        contactPreference: null,
+        phoneNumber: null,
+        email: '',
+        dateOfBirth: null,
+        department: null,
+        isActive: null,
+        photoPath: null
+      };
+      this.createEmployeeForm.reset();
+      this.panelTitle = 'Create Employee';
+    } else {
+      this.employee = Object.assign({}, this._employeeService.getEmployee(id));
+      this.panelTitle = 'Edit Employee';
+    }
   }
 
 }
