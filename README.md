@@ -221,3 +221,17 @@ https://loading.io/css/
 ## Angular canactivate guard example
 ng g c pageNotFound --flat
 ng g s employees/employee-details-guard
+
+## Passing data between components in angular
+Passing data from Parent Component to Child Component
+  + Input Properties
+
+Passing data from Child Component to Parent Component
+  + Output Properties
+  + Template Reference Variables
+
+Passing data from Component to Component (No parent child relation)
+  + Angular Service
+  + Required Route Parameters
+  + Optional Route Parameters
+  + Query Parameters
